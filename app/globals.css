@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-	font-family: var(--font-geist-sans);
+	font-family: var(--font-inter);
 }
 
 @layer base {
@@ -35,10 +35,12 @@ body {
 		--radius: 0.5rem;
 		--font-geist-sans: "Geist", sans-serif;
 		--font-geist-mono: "Geist Mono", monospace;
+		--font-inter: "Inter", sans-serif;
 	}
 	.dark {
 		--font-geist-sans: "Geist", sans-serif;
 		--font-geist-mono: "Geist Mono", monospace;
+		--font-inter: "Inter", sans-serif;
 		--background: 0 0% 3.9%;
 		--foreground: 0 0% 98%;
 		--card: 0 0% 3.9%;
