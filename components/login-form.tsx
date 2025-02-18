@@ -13,7 +13,7 @@ export default function LoginForm() {
 
 	const handleLoginGoogle = () => {
 		signIn("google", {
-			callbackUrl: "/dashboard",
+			callbackUrl: "/section/dashboard",
 		});
 	};
 
@@ -28,7 +28,7 @@ export default function LoginForm() {
 		});
 
 		if (signInResponse?.ok) {
-			router.push("/dashboard");
+			router.push("/section/dashboard");
 		} else {
 			setError(signInResponse!.error);
 		}

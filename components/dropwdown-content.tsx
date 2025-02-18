@@ -16,28 +16,21 @@ import {
 } from "@/components/ui/dropdown-menu";
 import Image from "next/image";
 import LogoutDropdownItem from "./logout-dropdown-item";
+import { Session } from "next-auth";
 
-interface User {
-  id?: string; // Biasanya ID pengguna jika tersedia
-  name?: string | null;
-  email?: string | null;
-  image?: string | null;
-}
-
-export function DropdownContent({ user }: { user: User }) {
-
+export function DropdownContent({ user }: { user: Session['user'] }) {
 	return (
 		<DropdownMenu>
 			<DropdownMenuTrigger asChild>
 				<Button variant="outline">
           <Image
-            src={user.image || "https://picsum.photos/200"}
-            alt={user.name || "profile"}
+            src={user?.image || "https://picsum.photos/32"}
+            alt={user?.name || "profile"}
             width={32}
             height={32}
             className="rounded-full"
           />
-          {user.name || user.email}
+          {user?.name || user?.email}
         </Button>
 			</DropdownMenuTrigger>
 			<DropdownMenuContent className="w-56">

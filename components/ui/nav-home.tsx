@@ -1,10 +1,8 @@
 import { ModeToggle } from "@/components/mode-toggle";
-import Link from "next/link";
 import Dropdown from "../dropdown";
 export default function NavHome() {
   return <>
-    <nav className="flex justify-between items-center p-6 fixed w-screen">
-			<Link href="/" className="text-2xl font-bold">Snippy</Link>
+    <nav className="px-6 right-0 fixed w-full flex justify-end">
       <div className="flex items-center gap-4">
         <ModeToggle />
 		  	<Dropdown />

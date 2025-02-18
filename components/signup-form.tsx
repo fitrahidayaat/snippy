@@ -13,7 +13,7 @@ export default function SignupForm() {
 
 	const handleSignupGoogle = () => {
 		signIn("google", {
-			callbackUrl: "/dashboard",
+			callbackUrl: "/section/dashboard",
 		});
 	};
 
