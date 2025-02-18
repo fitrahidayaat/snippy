@@ -12,7 +12,6 @@ import LoginForm from "@/components/login-form";
 // app/users/page.tsx
 
 export default async function LoginPage() {
-
 	return (
 		<>
 			<Nav />
@@ -22,7 +21,7 @@ export default async function LoginPage() {
 						<CardTitle className="text-center">Login to your account</CardTitle>
 					</CardHeader>
 					<CardContent>
-						<LoginForm/>
+						<LoginForm />
 					</CardContent>
 					<CardFooter className="flex justify-center">
 						<CardDescription className="text-primary">

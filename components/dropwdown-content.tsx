@@ -30,7 +30,7 @@ export function DropdownContent({ user }: { user: Session['user'] }) {
             height={32}
             className="rounded-full"
           />
-          {user?.name || user?.email}
+					<span className="hidden md:inline">{user?.name || user?.email}</span>
         </Button>
 			</DropdownMenuTrigger>
 			<DropdownMenuContent className="w-56">
