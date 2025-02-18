@@ -6,7 +6,7 @@ import { prisma } from "@/lib/prisma";
 import { Session, User, Account, Profile } from "next-auth";
 import { AdapterUser } from "next-auth/adapters";
 import { JWT } from "next-auth/jwt";
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 
 const authOptions: AuthOptions = {
 	adapter: PrismaAdapter(prisma),

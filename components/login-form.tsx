@@ -27,7 +27,7 @@ export default function LoginForm() {
 			redirect: false,
 		});
 
-		if (signInResponse && !signInResponse.error) {
+		if (signInResponse?.ok) {
 			router.push("/dashboard");
 		} else {
 			setError(signInResponse!.error);

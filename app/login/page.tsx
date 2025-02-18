@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button";
 import {
 	Card,
 	CardContent,
@@ -7,9 +6,6 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { FaGoogle } from "react-icons/fa";
 import Nav from "@/components/ui/nav";
 import Link from "next/link";
 import LoginForm from "@/components/login-form";
