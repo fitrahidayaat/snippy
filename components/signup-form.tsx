@@ -6,10 +6,12 @@ import { FaGoogle } from "react-icons/fa";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { Loader2 } from "lucide-react";
 
 export default function SignupForm() {
 	const router = useRouter();
 	const [error, setError] = useState<string | null>(null);
+	const [loading, setLoading] = useState(false);
 
 	const handleSignupGoogle = () => {
 		signIn("google", {
@@ -19,6 +21,7 @@ export default function SignupForm() {
 
 	const handleSignupEmail = async (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
+		setLoading(true);
 		const formData = new FormData(e.currentTarget);
 
 		const res = await fetch("/api/auth/register", {
@@ -64,13 +67,22 @@ export default function SignupForm() {
 						type="password"
 						placeholder="Password"
 						className=""
+						min="8"
+						minLength={8}
 						required
 					/>
 				</div>
 				{error && <p className="text-red-500 text-md -mt-2 mb-4">{error}</p>}
-				<Button type="submit" className="">
-					Sign Up
-				</Button>
+				{loading ? (
+					<Button type="submit" className="" disabled>
+						<Loader2 className="animate-spin" />
+						Sign Up
+					</Button>
+				) : (
+					<Button type="submit" className="">
+						Sign Up
+					</Button>
+				)}
 				<div className="flex justify-center items-center gap-3">
 					<span className="bg-gray-600 h-[1px] w-full" />
 					<p className="text-center my-3">or</p>

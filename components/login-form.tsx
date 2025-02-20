@@ -6,10 +6,12 @@ import { FaGoogle } from "react-icons/fa";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { Loader2 } from "lucide-react";
 
 export default function LoginForm() {
 	const router = useRouter();
 	const [error, setError] = useState<string | null>(null);
+	const [loading, setLoading] = useState(false);
 
 	const handleLoginGoogle = () => {
 		signIn("google", {
@@ -19,6 +21,7 @@ export default function LoginForm() {
 
 	const handleLoginEmail = async (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
+		setLoading(true);
 		const formData = new FormData(e.currentTarget);
 
 		const signInResponse = await signIn("credentials", {
@@ -30,6 +33,7 @@ export default function LoginForm() {
 		if (signInResponse?.ok) {
 			router.push("/section/dashboard");
 		} else {
+			setLoading(false);
 			setError(signInResponse!.error);
 		}
 	};
@@ -60,9 +64,17 @@ export default function LoginForm() {
 					/>
 				</div>
 				{error && <p className="text-red-500 text-md -mt-2 mb-4">{error}</p>}
-				<Button type="submit" className="">
-					Login
-				</Button>
+				{loading ? (
+					<Button type="submit" className="" disabled>
+						<Loader2 className="animate-spin" />
+						Login
+					</Button>
+				) : (
+					<Button type="submit" className="">
+						Login
+					</Button>
+				)}
+
 				<div className="flex justify-center items-center gap-3">
 					<span className="bg-gray-600 h-[1px] w-full" />
 					<p className="text-center my-3">or</p>

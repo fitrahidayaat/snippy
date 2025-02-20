@@ -33,7 +33,6 @@ export function NavMain({
 		}[];
 	}[];
 }) {
-  console.log(items);
 	return (
 		<SidebarGroup>
 			<SidebarGroupLabel>Sidebar</SidebarGroupLabel>
