@@ -60,34 +60,34 @@ const data = {
 			isActive: true,
 		},
 		{
-			title: "Link",
-			url: "#",
+			title: "Links",
+			url: "/section/links",
 			icon: Link,
-			items: [
-				{
-					title: "Create Link",
-					url: "/section/links/create",
-				},
-				{
-					title: "Link List",
-					url: "/section/links",
-				},
-			],
+			// items: [
+			// 	{
+			// 		title: "All Links",
+			// 		url: "/section/links",
+			// 	},
+			// 	{
+			// 		title: "Create Link",
+			// 		url: "/section/links/create",
+			// 	},
+			// ],
 		},
 		{
-			title: "Qr Code",
+			title: "Qr Codes",
 			url: "/section/qr-code",
 			icon: QrCode,
-			items: [
-				{
-					title: "Create Qr Code",
-					url: "/section/qr-code/create"
-				},
-				{
-					title: "Qr Code List",
-					url: "/section/qr-code"
-				},
-			],
+			// items: [
+			// 	{
+			// 		title: "All Qr Code",
+			// 		url: "/section/qr-code"
+			// 	},
+			// 	{
+			// 		title: "Create Qr Code",
+			// 		url: "/section/qr-code/create"
+			// 	},
+			// ],
 		},
 		{
 			title: "Analytics",
