@@ -5,8 +5,8 @@ import { Label } from "@/components/ui/label";
 
 export default function CreateLinkPage() {
 	return (
-		<div className="px-3 xl:px-72 py-4">
-			<h1 className="text-2xl font-bold">Snippy Links</h1>
+		<div className="px-3 xl:px-32 py-4">
+			<h1 className="text-2xl font-bold">Create a Link</h1>
 			<Card className="mt-8 pt-4 pb-6 px-8 bg-sidebar">
 				<form className="mt-4 flex flex-col gap-8">
 					<div className="flex flex-col gap-2">
