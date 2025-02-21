@@ -18,7 +18,7 @@ export default function LinkPage() {
 						className="pl-12 pr-4"
 					/>
 				</div>
-
+			
 				<Link href="/section/links/create">
 					<Button><Plus/><span className="hidden sm:inline">Create Link</span></Button>
 				</Link>

@@ -24,19 +24,22 @@ export default function CreateLinkPage() {
 						<Input id="Title" name="Title" type="text" />
 					</div>
 
-					<h2 className="text-xl font-bold">Short Link</h2>
-					<div className="flex flex-col gap-2">
-						<Label htmlFor="custom" className="font-semibold">
-							{" "}
-							Custom back-half{" "}
-						</Label>
-						<div className="flex items-center gap-2">
-							<span>snippy.com/</span>
-							<Input id="custom" name="custom" type="text" />
+					<div>
+						<h2 className="text-xl font-bold mb-6">Short Link</h2>
+						<div className="flex flex-col gap-2">
+							<Label htmlFor="custom" className="font-semibold">
+								{" "}
+								Custom back-half{" "}
+							</Label>
+							<div className="flex items-center gap-2">
+								<span>snippy.com/</span>
+								<Input id="custom" name="custom" type="text" />
+							</div>
+						</div>
+						<div className="flex justify-end mt-8">
+							<Button className="w-36">Create Link</Button>
 						</div>
 					</div>
-
-					<Button>Create Link</Button>
 				</form>
 			</Card>
 		</div>
