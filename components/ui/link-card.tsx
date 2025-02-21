@@ -8,9 +8,9 @@ import Link from "next/link";
 
 export function LinkCard() {
 	return (
-		<Card className="">
+		<Card className="bg-sidebar">
 			<CardContent className="flex flex-wrap justify-between pt-8 gap-3">
-				<div className="max-w-[400px] lg:max-w-[600px] xl:max-w-[600px] 2xl:max-w-[900px]  flex flex-col gap-2">
+				<div className="max-w-[400px] lg:max-w-[600px] xl:max-w-[600px] 2xl:max-w-[900px] flex flex-col gap-2">
 					<a href="" className="text-xl font-bold hover:underline">
 						https://telkomuniversity.com
 					</a>
@@ -29,12 +29,12 @@ export function LinkCard() {
 					<CopyButton link="https://telkomuniversity.com" />
 					<Link href="/section/links/edit">
 						<Button>
-							<Edit/>
+							<Edit />
 							Edit
 						</Button>
 					</Link>
 					<Button>
-						<Trash/>
+						<Trash />
 						Delete
 					</Button>
 				</div>
