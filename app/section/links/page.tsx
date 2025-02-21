@@ -20,7 +20,7 @@ export default function LinkPage() {
 				</div>
 
 				<Link href="/section/links/create">
-					<Button><Plus/>Create Link</Button>
+					<Button><Plus/><span className="hidden sm:inline">Create Link</span></Button>
 				</Link>
 			</form>
 

@@ -25,15 +25,17 @@ export function LinkCard() {
 						<span>Dec 11 2023</span>
 					</div>
 				</div>
-				<div className="flex flex-wrap gap-3 justify-end">
+				<div className="flex flex-wrap gap-2 justify-end">
 					<CopyButton link="https://telkomuniversity.com" />
 					<Link href="/section/links/edit">
 						<Button>
-							<Edit></Edit>
+							<Edit/>
+							Edit
 						</Button>
 					</Link>
 					<Button>
-						<Trash></Trash>
+						<Trash/>
+						Delete
 					</Button>
 				</div>
 			</CardContent>
