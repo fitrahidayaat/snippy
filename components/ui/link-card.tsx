@@ -28,12 +28,12 @@ export function LinkCard() {
 				<div className="flex flex-wrap gap-2 justify-end">
 					<CopyButton link="https://telkomuniversity.com" />
 					<Link href="/section/links/edit">
-						<Button>
-							<Edit />
+						<Button size="sm">
+							<Edit/>
 							Edit
 						</Button>
 					</Link>
-					<Button>
+					<Button size="sm">
 						<Trash />
 						Delete
 					</Button>

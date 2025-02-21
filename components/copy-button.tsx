@@ -13,7 +13,7 @@ export default function CopyButton({ link }: { link: string }) {
 	};
 	return (
 		<>
-			<Button onClick={handleCopy}>
+			<Button onClick={handleCopy} size="sm">
 				<Copy />
 				{copied ? "Copied!" : "Copy"}
 			</Button>
