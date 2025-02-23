@@ -4,9 +4,9 @@ import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 
 export default async function Dropdown() {
   const session = await getServerSession(authOptions);
-	return (
-		<>
-				<DropdownContent user={session?.user as User} />
-		</>
-	);
+  return (
+    <>
+      <DropdownContent user={session?.user as User} />
+    </>
+  );
 }
