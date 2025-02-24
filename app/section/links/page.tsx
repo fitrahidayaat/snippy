@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { LinkCard } from "@/components/ui/link-card";
+import { LinkCard } from "@/components/links/link-card";
 import { Plus } from "lucide-react";
 import Link from "next/link";
 import { FaSearch } from "react-icons/fa";

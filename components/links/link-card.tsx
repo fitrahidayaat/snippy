@@ -2,8 +2,8 @@ import * as React from "react";
 
 import { Card, CardContent } from "@/components/ui/card";
 import { Calendar, Edit, Trash } from "lucide-react";
-import CopyButton from "../copy-button";
-import { Button } from "./button";
+import CopyButton from "./copy-button";
+import { Button } from "../ui/button";
 import Link from "next/link";
 
 export function LinkCard() {
@@ -11,10 +11,7 @@ export function LinkCard() {
     <Card className="bg-sidebar">
       <CardContent className="flex flex-wrap justify-between pt-8 gap-3">
         <div className="max-w-[400px] lg:max-w-[600px] xl:max-w-[600px] 2xl:max-w-[900px] flex flex-col gap-2">
-          <a href="" className="text-xl font-bold hover:underline">
-            https://telkomuniversity.com
-          </a>
-          <a href="" className="text-lg hover:underline text-blue-500">
+          <a href="" className="text-lg hover:underline">
             snippy.com/RecordOpenMindComputingGen9
           </a>
           <a href="" className="truncate hover:underline">

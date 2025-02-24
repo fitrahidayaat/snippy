@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/card";
 import Nav from "@/components/ui/nav";
 import Link from "next/link";
-import LoginForm from "@/components/login-form";
+import LoginForm from "@/components/auth/login-form";
 // app/users/page.tsx
 
 export default async function LoginPage() {

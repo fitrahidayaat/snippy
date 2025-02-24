@@ -15,9 +15,9 @@ import {
   QrCode,
 } from "lucide-react";
 
-import { NavMain } from "@/components/nav-main";
+import { NavMain } from "@/components/layout/nav-main";
 // import { NavProjects } from "@/components/nav-projects"
-import { NavUser } from "@/components/nav-user";
+import { NavUser } from "@/components/layout/nav-user";
 // import { TeamSwitcher } from "@/components/team-switcher"
 import {
   Sidebar,
@@ -27,6 +27,7 @@ import {
   // SidebarHeader,
   SidebarRail,
 } from "@/components/ui/sidebar";
+import { TeamSwitcher } from "./team-switcher";
 
 // This is sample data.
 const data = {
@@ -125,10 +126,9 @@ export function AppSidebar({
 }: React.ComponentProps<typeof Sidebar>) {
   return (
     <Sidebar collapsible="icon" {...props}>
-      {/* <SidebarHeader>
+      <SidebarHeader>
         <TeamSwitcher teams={data.teams} />
-      </SidebarHeader> */}
-      <SidebarHeader className="text-center">S</SidebarHeader>
+      </SidebarHeader>
       <SidebarContent>
         <NavMain items={data.navMain} />
         {/* <NavProjects projects={data.projects} /> */}

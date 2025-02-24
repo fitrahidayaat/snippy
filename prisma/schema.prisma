@@ -52,6 +52,7 @@ model User {
   updatedAt     DateTime  @updatedAt
   accounts      Account[]
   sessions      Session[]
+  links         Link[]
 }
 
 model VerificationRequest {
@@ -63,4 +64,22 @@ model VerificationRequest {
   updatedAt  DateTime @updatedAt
 
   @@unique([identifier, token])
+}
+
+model Link {
+  id         String   @id @default(cuid())
+  userId     String
+  linkId     String
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  visits     Visit[]
+  user       User     @relation(fields: [userId], references: [id])
+}
+
+model Visit {
+  id        String   @id @default(cuid())
+  linkId    String
+  userId    String
+  visitedAt DateTime @default(now())
+  link      Link     @relation(fields: [linkId], references: [id])
 }
