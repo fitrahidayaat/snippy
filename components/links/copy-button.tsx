@@ -9,7 +9,7 @@ export default function CopyButton({ link }: { link: string }) {
   const handleCopy = () => {
     navigator.clipboard.writeText(link);
     setCopied(true);
-    setTimeout(() => setCopied(false), 1000); // Reset after 1 second.
+    setTimeout(() => setCopied(false), 1000);
   };
   return (
     <>

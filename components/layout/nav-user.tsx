@@ -1,10 +1,5 @@
 "use client";
-import {
-  BadgeCheck,
-  Bell,
-  ChevronsUpDown,
-  LogOut,
-} from "lucide-react";
+import { BadgeCheck, Bell, ChevronsUpDown, LogOut } from "lucide-react";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import {
   DropdownMenu,
@@ -23,15 +18,8 @@ import {
 } from "@/components/ui/sidebar";
 import { signOut } from "next-auth/react";
 import Image from "next/image";
-export function NavUser({
-  user,
-}: {
-  user: {
-    name: string;
-    email: string;
-    image: string;
-  };
-}) {
+import { Session } from "next-auth";
+export function NavUser({ user }: { user?: Session["user"] }) {
   const { isMobile } = useSidebar();
   return (
     <SidebarMenu>
@@ -47,8 +35,8 @@ export function NavUser({
                   <Image
                     src={user.image}
                     alt={user.name ?? "User"}
-                    width={32} // Set width to match the Avatar
-                    height={32} // Set height to match the Avatar
+                    width={32} 
+                    height={32} 
                     className="rounded-lg"
                   />
                 ) : (
@@ -56,8 +44,8 @@ export function NavUser({
                 )}
               </Avatar>
               <div className="grid flex-1 text-left text-sm leading-tight">
-                <span className="truncate font-semibold">{user.name}</span>
-                <span className="truncate text-xs">{user.email}</span>
+                <span className="truncate font-semibold">{user?.name}</span>
+                <span className="truncate text-xs">{user?.email}</span>
               </div>
               <ChevronsUpDown className="ml-auto size-4" />
             </SidebarMenuButton>
@@ -75,8 +63,8 @@ export function NavUser({
                     <Image
                       src={user.image}
                       alt={user.name ?? "User"}
-                      width={32} // Set width to match the Avatar
-                      height={32} // Set height to match the Avatar
+                      width={32} 
+                      height={32} 
                       className="rounded-lg"
                     />
                   ) : (
@@ -84,19 +72,12 @@ export function NavUser({
                   )}
                 </Avatar>
                 <div className="grid flex-1 text-left text-sm leading-tight">
-                  <span className="truncate font-semibold">{user.name}</span>
-                  <span className="truncate text-xs">{user.email}</span>
+                  <span className="truncate font-semibold">{user?.name}</span>
+                  <span className="truncate text-xs">{user?.email}</span>
                 </div>
               </div>
             </DropdownMenuLabel>
             <DropdownMenuSeparator />
-            {/* <DropdownMenuGroup>
-							<DropdownMenuItem>
-								<Sparkles />
-								Upgrade to Pro
-							</DropdownMenuItem>
-						</DropdownMenuGroup>
-						<DropdownMenuSeparator /> */}
             <DropdownMenuGroup>
               <DropdownMenuItem>
                 <BadgeCheck />

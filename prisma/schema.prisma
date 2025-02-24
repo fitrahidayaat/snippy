@@ -69,6 +69,7 @@ model VerificationRequest {
 model Link {
   id           String   @id @default(cuid())
   userId       String
+  title        String
   shortLink    String
   originalLink String
   createdAt    DateTime @default(now())

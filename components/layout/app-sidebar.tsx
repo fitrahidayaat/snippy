@@ -1,33 +1,24 @@
 "use client";
-
 import * as React from "react";
 import {
-  AudioWaveform,
-  Command,
-  Frame,
-  GalleryVerticalEnd,
   Link,
-  Map,
-  PieChart,
   Settings2,
-  SquareTerminal,
   ChartBar,
   QrCode,
+  LayoutDashboard,
+  Scissors,
 } from "lucide-react";
-
 import { NavMain } from "@/components/layout/nav-main";
-// import { NavProjects } from "@/components/nav-projects"
 import { NavUser } from "@/components/layout/nav-user";
-// import { TeamSwitcher } from "@/components/team-switcher"
 import {
   Sidebar,
   SidebarContent,
   SidebarFooter,
   SidebarHeader,
-  // SidebarHeader,
   SidebarRail,
 } from "@/components/ui/sidebar";
 import { TeamSwitcher } from "./team-switcher";
+import { Session } from "next-auth";
 
 // This is sample data.
 const data = {
@@ -38,57 +29,27 @@ const data = {
   },
   teams: [
     {
-      name: "Acme Inc",
-      logo: GalleryVerticalEnd,
-      plan: "Enterprise",
-    },
-    {
-      name: "Acme Corp.",
-      logo: AudioWaveform,
-      plan: "Startup",
-    },
-    {
-      name: "Evil Corp.",
-      logo: Command,
-      plan: "Free",
+      name: "Snippy",
+      logo: Scissors,
+      plan: "Shorten your link",
     },
   ],
   navMain: [
     {
       title: "Dashboard",
       url: "/section/dashboard",
-      icon: SquareTerminal,
+      icon: LayoutDashboard,
       isActive: true,
     },
     {
       title: "Links",
       url: "/section/links",
       icon: Link,
-      // items: [
-      // 	{
-      // 		title: "All Links",
-      // 		url: "/section/links",
-      // 	},
-      // 	{
-      // 		title: "Create Link",
-      // 		url: "/section/links/create",
-      // 	},
-      // ],
     },
     {
       title: "Qr Codes",
       url: "/section/qr-code",
       icon: QrCode,
-      // items: [
-      // 	{
-      // 		title: "All Qr Code",
-      // 		url: "/section/qr-code"
-      // 	},
-      // 	{
-      // 		title: "Create Qr Code",
-      // 		url: "/section/qr-code/create"
-      // 	},
-      // ],
     },
     {
       title: "Analytics",
@@ -101,29 +62,14 @@ const data = {
       icon: Settings2,
     },
   ],
-  projects: [
-    {
-      name: "Design Engineering",
-      url: "#",
-      icon: Frame,
-    },
-    {
-      name: "Sales & Marketing",
-      url: "#",
-      icon: PieChart,
-    },
-    {
-      name: "Travel",
-      url: "#",
-      icon: Map,
-    },
-  ],
 };
+
 
 export function AppSidebar({
   user,
   ...props
-}: React.ComponentProps<typeof Sidebar>) {
+}: React.ComponentProps<typeof Sidebar> & { user?: Session["user"] }) {
+  console.log(user);
   return (
     <Sidebar collapsible="icon" {...props}>
       <SidebarHeader>
@@ -131,7 +77,6 @@ export function AppSidebar({
       </SidebarHeader>
       <SidebarContent>
         <NavMain items={data.navMain} />
-        {/* <NavProjects projects={data.projects} /> */}
       </SidebarContent>
       <SidebarFooter>
         <NavUser user={user} />
